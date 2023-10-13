@@ -3,14 +3,13 @@
   "title": "Life Expectancy vs Child Mortality",
   "width": 800,
   "height": 750,
-  "description": "A scatterplot showing the amount of death of children under 5 years of age and the average number of years a new born child would live in countries.",
   "data": {
     "url": "https://raw.githubusercontent.com/KenYangChew/try/main/data/Country-data.csv"
   },
   "params": [
     {
       "name": "Expec_Above",
-      "value": "0",
+      "value": 0,
       "bind": {
         "input": "range",
         "min": 0,
@@ -21,28 +20,83 @@
     }
   ],
   "transform": [
-    {"filter": "datum.life_expec > 0"},
+    {"filter": "datum.income > 0"},
     {"filter": "datum.child_mort > 0"},
     {"filter": "datum.life_expec > Expec_Above"}
   ],
-  "mark": "circle",
   "encoding": {
     "x": {
       "field": "life_expec",
       "type": "quantitative",
       "axis": {"tickCount": 2},
       "scale": {"type": "log", "domain": [1, 100]}
-    },
+      },
     "y": {
       "field": "child_mort",
       "type": "quantitative",
       "axis": {"tickCount": 3},
       "scale": {"type": "log", "domain": [1, 1000]}
+      }
     },
-    "tooltip": [
-      {"field": "country", "type": "nominal"},
-      {"field": "life_expec", "type": "quantitative"},
-      {"field": "child_mort", "type": "quantitative"}
-    ]
-  }
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "size": {
+          "field": "life_expec",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "life_expec",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              "20",
+              "40",
+              "60",
+              "80"
+            ],
+            "range": [
+              "#009e73",
+              "#f0e442",
+              "#0072b2",
+              "#cc79a7"
+            ]
+          }
+        },
+        "opacity": {"value": 0.5},
+        "tooltip": [
+          {"field": "country", "type": "nominal"},
+          {"field": "life_expec", "type": "quantitative"},
+          {"field": "child_mort", "type": "quantitative"}
+          ]
+        }
+      },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['country'] == 'Haiti' || datum['country'] == 'Iceland'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "country", "type": "nominal"},
+          {"field": "life_expec", "type": "quantitative"},
+          {"field": "child_mort", "type": "quantitative"}
+        ]
+      }
+    }
+  ]
 }
