@@ -88,7 +88,7 @@
   "config": 
     {
       "view": {"stroke": "transparent"},
-      "background" : "#EDE7D9",
+      "background" : "#ffffff",
       "legend": {
         "offset": -20, 
         "titleFontSize": 12,
