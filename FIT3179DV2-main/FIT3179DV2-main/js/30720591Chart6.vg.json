@@ -1,0 +1,49 @@
+
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 500,
+    "data": {
+        "url": "https://raw.githubusercontent.com/beccanga/FIT3179DV2/main/data/country_profile_variables.csv"
+    },
+
+    "transform": [
+          {"filter": 
+              {"field": "country", "oneOf": ["United States of America","Australia","China", "India", "Malaysia", "Russia", "Japan", "France", "Brazil", "Republic of Korea", "Germany","United Kingdom", "Italy", "France"]}}
+    ],
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "field": "Exports",
+            "type": "quantitative",
+            "title": "International trade: Exports (million US$)"
+        },
+        "y": {
+            "field": "country",
+            "title": "Country"
+        },
+    "tooltip": [
+      {"field": "country", "type": "nominal"},
+      {"field": "Imports", 
+      "title": "International trade: Exports (million US$)",
+      "type": "quantitative", "format": ","}],
+        "color": {
+            "field": "Imports",
+            "aggregate": "max",
+            "type": "quantitative",
+            "legend": {"title": "Million US$",
+              "values": [0, 1000000]
+            }
+        }
+    },
+    
+       "config": 
+      {
+        "background" : "#EDE7D9",
+        "view": {"stroke": "transparent"},
+        "legend": {
+          "titleFontSize": 12,
+          "labelFontSize": 12
+        }
+  }
+  }

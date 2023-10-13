@@ -1,0 +1,87 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/beccanga/FIT3179DV2/main/data/country_profile_variables.csv"
+  },
+    "params": [{
+      "name" : "Region", 
+      "select" : {"type": "point", "fields":["Region"]},
+      "bind": {"legend": "dblclick"}
+    }
+  ],
+    "selection": 
+    {"region_selection": {"type": "point", 
+      "fields": ["Region"], 
+      "bind": "legend"}
+  },
+  "transform":[
+    {"filter": "datum.CO2emissionestimates > 0"},
+    {"filter": "datum.GDP > 0"}
+  ],
+  
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "param": "GDP",
+      "field": "GDP",
+      "type": "quantitative",
+      "title":"Country GDP",
+      "axis": {"tickCount": 2},
+      "scale": {"type": "log",  "domain":[1, 100000000]}
+    },
+    
+    "y": {
+      "param": "CO2 Emission Estimates",
+      "field": "CO2emissionestimates",
+      "type": "quantitative",
+      "title": "CO2 Emission Estimates",
+      "axis": {"tickCount": 2},
+      "scale": {"type": "log", "domain":[1, 1000000000]}
+    },
+
+    "size": {"field": "Population", "type": "quantitative",  "scale": {"range": [100, 1000]}
+},
+    "fill": {"field": "Region",  
+    "type": "nominal",
+    "scale": {"domain":["Carribean", "CentralAmerica", "CentralAsia", "EsternAfrica", "EasternAsia", "EasternEurope", "Melanesia",
+    "Micronesia", "MiddleAfrica", "NothernAfrica","NorthernAmerica","NorthernEurope","Oceania",
+    "Polynesia", "South-easternAsia", "SouthAmerica", "SouthernAfrica", "SouthernAsia", "SouththernEurope", "WesternAfrica", "WesternAsia", "WesternEurope"],
+    "range": [
+    "#BEE9E8", "#62B6CB", "#1B4965","#CAE9FF", "#5FA8D3", 
+    "#C0BDA5", "#CC978E","#F39C6B", "#FF3864", "#261447",
+    "#DFD9E2","#C3ACCE","#89909F","#538083", "#2A7F62",
+    "#212738", "#F97068", "#D1D646", "#57C4E5", "#EBBAB9", "#C9C5BA", "#407076"]
+    }},
+
+    "color": 
+    {"field": "Region",  "type": "nominal",
+    "scale": 
+      {"domain":
+      ["Carribean", "CentralAmerica", "CentralAsia", "EsternAfrica", "EasternAsia", "EasternEurope", "Melanesia","Micronesia", "MiddleAfrica", "NothernAfrica",
+      "NorthernAmerica","NorthernEurope","Oceania","Polynesia", "South-easternAsia", "SouthAmerica", "SouthernAfrica", "SouthernAsia", "SouththernEurope", "WesternAfrica", "WesternAsia", "WesternEurope"], 
+      "range": [ "#BEE9E8", "#62B6CB", "#1B4965","#CAE9FF", "#5FA8D3", "#C0BDA5", "#CC978E","#F39C6B", "#FF3864", "#261447","#DFD9E2","#C3ACCE","#89909F","#538083", "#2A7F62",
+      "#212738", "#F97068", "#D1D646", "#57C4E5", "#EBBAB9", "#C9C5BA", "#407076"]}
+    },
+    "opacity": {
+      "condition": {"param": "region_selection", "value": 1},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "country", "type": "nominal"},
+      {"field": "Population", "type": "quantitative", "format": ","},
+      {"field": "GDP", "type": "quantitative", "format": ","},
+      {"field": "CO2emissionestimates", "type": "quantitative", "format": ","}
+    ]
+  },
+   "config": 
+      {
+        "background" : "#EDE7D9",
+        "view": {"stroke": "transparent"},
+        "legend": {
+          "titleFontSize": 12,
+          "labelFontSize": 12
+        }
+  }
+}
