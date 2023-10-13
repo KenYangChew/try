@@ -53,8 +53,8 @@
           "type": "quantitative",
           "title": "Inflation",
           "scale": {
-            "type": "linear",
-            "range": ["#2F4B26","#3E885B","#4F5D2F","#85BDA6","#A64253","#A62639"],
+            "type": "threshold",
+            "range": ["#fd8d3c", "#e6550d", "#bd0026", "#9f0000", "#0f0000"],
             "domain" : [0,200]
           }
           
