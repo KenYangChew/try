@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 500,
+    "data": {
+        "url": "https://raw.githubusercontent.com/KenYangChew/VIS2/main/data/Country-data.csv"
+    },
+    "transform": [
+        {"filter": {"field": "country", "oneOf": ["Singapore","Luxembourg","Malta", "Ireland" ,"Seychelles", "Malaysia","Equatorial Guinea" , "Congo, Rep.", "Hungary", "United Arab Emirates", "Maldives"]}}
+    ],
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "field": "exports",
+            "type": "quantitative",
+            "title": "Exports of goods and services"
+        },
+        "y": {
+            "field": "country",
+            "title": "Country",
+            "sort": "-x"
+        },
+        "tooltip": [
+            {"field": "country", "type": "nominal","title": "Country"},
+            {"field": "exports", "title": "Exports"}
+        ],
+        "color": {
+            "field": "exports",
+            "aggregate": "max",
+            "type": "quantitative",
+            "legend": {
+                "title": "Million US$",
+                "values": [0, 200]
+            }
+        }
+    },
+    "config": {
+        "background": "#EDE7D9",
+        "view": {"stroke": "black"},
+        "legend": {
+            "titleFontSize": 12,
+            "labelFontSize": 12,
+        }
+    }
+}
