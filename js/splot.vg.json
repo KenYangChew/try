@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Life Expectancy vs Child Mortality",
-  "width": "container",
-  "height": 500,
+  "width": 800,
+  "height": 750,
   "description": "A scatterplot showing the amount of death of children under 5 years of age and the average number of years a new born child would live in countries.",
   "data": {
-    "url": "https://raw.githubusercontent.com/KenYangChew/VIS2/main/data/Country-data.csv"
+    "url": "https://raw.githubusercontent.com/KenYangChew/try/main/data/Country-data.csv"
   },
   "params": [
     {
