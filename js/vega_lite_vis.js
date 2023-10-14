@@ -3,18 +3,18 @@ var splot= "js/splot.vg.json";
 var imports = "js/import.vg.json";
 var exports = "js/export.vg.json";    
 
-vegaEmbed('#vis1', visualisation).then(function (result) {
+vegaEmbed('#visualisation', visualisation).then(function (result) {
   // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
-vegaEmbed('#vis2', splot).then(function (result) {
+vegaEmbed('#splot', splot).then(function (result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
         
-vegaEmbed('#vis3', imports).then(function (result) {
+vegaEmbed('#imports', imports).then(function (result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
         
-vegaEmbed('#vis4', exports).then(function (result) {
+vegaEmbed('#exports', exports).then(function (result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
