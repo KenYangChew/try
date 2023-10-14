@@ -23,8 +23,8 @@
     <div class="page">
         <h1><centre>Humanitarian Aid to Underdeveloped Countries</centre></h1>
       <p style="color:black" align="center">
-    </style>This visualization is to help visualize a data done by<br> HELP international which is an NGO that wants to help<br> solve worldwide poverty problem.
-    The data in the visualization will<br> help to identify which country is to be made a<br> priority to tackle their poverty issues.</p>
+    </style>This visualization is to help visualize a data done by<br> HELP international which is an NGO that wants to help<br> <b>solve worldwide poverty problem</b>.
+    The data in the visualization will<br> help to identify which country is to be made a<br> <b>priority to tackle their poverty issues</b>.</p>
 
     <!-- pure grid group -->
     <div class="pure-g">
@@ -32,7 +32,7 @@
             <h2 style="color:black" align="center">
             </style>Inflation of each country</h2>
             <p style="color:black" align="center">
-            </style>The visualization shown below is the inflation by country and<br> it is visualised with colour saturation.</p>
+            </style>The visualization shown below is the <b>inflation</b> by country and<br> it is visualised with colour saturation.</p>
             <div class="pure-u-1-1">
             <div id="vis1"  class="vis-container"></div>
         </div>
@@ -46,8 +46,8 @@
             <h2 style="color:black" align="center">
             </style>Life Expectancy vs Child Mortality of Country</h2>
             <p style="color:black" align="center">
-            </style>Every country has it's life expectancy but many countries also<br> 
-        have high child mortality in the same time. The visualization<br> 
+            </style>Every country has it's <b>life expectancy</b> but many countries also<br> 
+        have high <b>child mortality</b> in the same time. The visualization<br> 
         below shows the comparison both attributes.</p>
             <div class="pure-u-1-1">
             <div id="vis2"  class="vis-container" ></div>
@@ -63,7 +63,7 @@
             <h2 style="color:black" align="center">
             </style>Top 10 Imports by Country</h2>
                 <p style="color:black" align="center">
-                </style>The visualization below shows the top 10 country with the<br> highest imports of goods and servies.</p>
+                </style>The visualization below shows the <b>top 10</b> country with the<br> <b>highest imports</b> of goods and servies.</p>
             <div id="vis3"  class="vis-container"></div>
           </div>
           
@@ -72,7 +72,7 @@
         <h2 style="color:black" align="center">
         </style>Top 10 Exports by Country </h2>
             <p style="color:black" align="center">
-                </style>The visualization below shows the top 10 country with the<br> highest exports of goods and servies.</p>
+                </style>The visualization below shows the <b>top 10</b> country with the<br> <b>highest exports</b> of goods and servies.</p>
         <div id="vis4"  class="vis-container"></div>
       </div>
   </div>
@@ -89,20 +89,18 @@
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
-        vegaEmbed('#vis3', spec3, { "actions": false }).then(function (result) {
-          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-  
-    
         vegaEmbed('#vis2', spec2, { "actions": false }).then(function (result) {
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
-
+        
+        vegaEmbed('#vis3', spec3, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        
         vegaEmbed('#vis4', spec4, { "actions": false }).then(function (result) {
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
-            
-
+          
       </script>
   </body>
 </html>
