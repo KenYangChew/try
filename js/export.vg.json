@@ -6,7 +6,7 @@
         "url": "https://raw.githubusercontent.com/KenYangChew/try/main/data/Country-data.csv"
     },
     "transform": [
-        {"filter": {"field": "country", "oneOf": ["Singapore","Luxembourg","Malta", "Ireland" ,"Seychelles", "Malaysia","Equatorial Guinea" , "Congo, Rep.", "Hungary", "United Arab Emirates", "Maldives"]}}
+        {"filter": {"field": "country", "oneOf": ["Singapore","Luxembourg","Malta", "Ireland" ,"Seychelles", "Malaysia","Equatorial Guinea" , "Hungary", "United Arab Emirates", "Maldives"]}}
     ],
     "mark": "rect",
     "encoding": {
