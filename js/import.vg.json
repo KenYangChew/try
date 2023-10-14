@@ -29,7 +29,7 @@
             "aggregate": "max",
             "type": "quantitative",
             "legend": {
-                "title": %of the Total GDP",
+                "title": "%of the Total GDP",
                 "values": [0, 174]
             }
         }
