@@ -9,7 +9,7 @@
 
     "transform": [
         {"filter": 
-            {"field": "country", "oneOf": ["Singapore","Malta","Luxembourg", "Seychelles", "Lesotho", "Liberia", "Ireland", "Kyrgyz Republic", "Vietnam", "Kiribati", "Guyana"]}}
+            {"field": "country", "oneOf": ["Singapore","Malta","Luxembourg", "Seychelles", "Lesotho", "Liberia", "Ireland","Vietnam", "Kiribati", "Guyana","Moldova"]}}
     ],
     "mark": "rect",
     "encoding": {
