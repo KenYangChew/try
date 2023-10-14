@@ -1,4 +1,3 @@
-
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
@@ -6,10 +5,8 @@
     "data": {
         "url": "https://raw.githubusercontent.com/KenYangChew/try/main/data/Country-data.csv"
     },
-
     "transform": [
-        {"filter": 
-            {"field": "country", "oneOf": ["Singapore","Malta","Luxembourg", "Seychelles", "Lesotho", "Liberia", "Ireland","Vietnam", "Kiribati", "Guyana","Moldova"]}}
+        {"filter": {"field": "country", "oneOf": ["Singapore","Malta","Luxembourg", "Seychelles", "Lesotho", "Liberia", "Ireland","Vietnam", "Kiribati", "Guyana","Moldova"]}}
     ],
     "mark": "rect",
     "encoding": {
@@ -21,11 +18,12 @@
         "y": {
             "field": "country",
             "title": "Country",
-            "sort" : "-x"
+            "sort": "-x"
         },
-    "tooltip": [
-        {"field": "country", "type": "nominal","title": "Country"},
-        {"field": "imports", "title": "Imports","type": "quantitative"}],
+        "tooltip": [
+            {"field": "country", "type": "nominal","title": "Country"},
+            {"field": "imports", "title": "Imports","type": "quantitative"}
+        ],
         "color": {
             "field": "imports",
             "aggregate": "max",
@@ -36,10 +34,9 @@
             }
         }
     },
-    
     "config": {
-        "background" : "#ffffff",
-        "view": {"stroke": "transparent"},
+        "background": "#ffffff",
+        "view": {"stroke": "black"},
         "legend": {
             "titleFontSize": 12,
             "labelFontSize": 12
