@@ -27,7 +27,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/KenYangChew/try/js/WorldMapWithGraticules.topojson",
+        "url": "https://raw.githubusercontent.com/KenYangChew/try/main/js/WorldMapWithGraticules.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
       "mark": {"type": "geoshape", "fill": null, "stroke": "white"}
